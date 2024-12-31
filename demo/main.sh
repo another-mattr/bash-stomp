@@ -1,28 +1,24 @@
 #! /bin/bash
-
 set -e
 
-# Get the directory of the current script
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-# Include the functions from functions.sh relative to the script's directory
 source "$SCRIPT_DIR/source-me.sh"
 
+# Simple override in the same file.
 function foo() {
-  echo "foo1"
+  echo "foo original"
 }
 
 function foo() {
-  echo "foo2"
+  echo "foo overridden"
 }
-
-
 
 foo
-bar
 
+
+# Overriding a helper method that was originally defined within a sourced file.
 bar() {
-  echo "bar main"
+  echo "bar overridden"
 }
 
-bar
+baz
