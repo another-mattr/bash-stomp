@@ -14,9 +14,6 @@ This project is a proof of concept that alerts developers when they have overrid
 
 ## Using this project
 
-The magic happens within the `no-stomp.sh` script.  Simply source `no-stomp.sh` into the root of your bash script, then execute your script as normal.  `no-stomp.sh` will cause your script to execute in verbose mode, and provide additional output when methods are declared `<< DEBUG: $method DECLARED >>` and overridden `<< WARNING: $method OVERRIDDEN >>`.
-
-These debug statements are included in the verbose output, and also logged separately to the `output.log` file for convenience.
+The magic happens within the `no-stomp.sh` script.  Simply source `no-stomp.sh` into the root of your bash script, then execute your script as normal.  `no-stomp.sh` will cause your script to execute in verbose mode, and provide additional output when methods are declared and overridden.
 
 See the `/demo` directory for a sample project.
-
