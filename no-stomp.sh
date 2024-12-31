@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Define color codes
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
 # Store the initial list of functions
 declare -A functions_map
 
@@ -26,9 +31,9 @@ no_stomp_process_line() {
     if [[ "$line" =~ ^[[:space:]]*(function[[:space:]]+)?([a-zA-Z_][a-zA-Z0-9_]*)[[:space:]]*\(\)?[[:space:]]*\{ ]]; then
       local func="${BASH_REMATCH[2]}"
       if [[ -n "${functions_map[$func]}" ]]; then
-        echo "<< WARNING: $func OVERRIDDEN >>" | tee -a $LOGFILE
+        echo -e "<< WARNING: $func ${RED}OVERRIDDEN${NC} >>" | tee -a $LOGFILE
       else
-        echo "<< DEBUG: $func DECLARED >>" | tee -a $LOGFILE
+        echo -e "<< DEBUG: $func ${GREEN}DECLARED${NC} >>" | tee -a $LOGFILE
         functions_map[$func]=1
       fi
     fi

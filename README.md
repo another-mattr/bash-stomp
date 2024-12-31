@@ -16,6 +16,10 @@ The magic happens within the `no-stomp.sh` script.  Simply source `no-stomp.sh` 
 
 See the `/demo` directory for a sample project.
 
+## Sample output
+
+![Screenshot of demo terminal output.](media/demo_output.jpg)
+
 _______
 
 <sup>_Disclaimer: This is a proof of concept. Use at your own risk._</sup>
